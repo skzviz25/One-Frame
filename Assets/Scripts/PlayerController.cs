@@ -77,6 +77,10 @@ public class PlayerController : MonoBehaviour
                 break;
             case 2:
                 ExecuteEMPPulse();
+                if (GameManager.Instance != null)
+                {
+                    GameManager.Instance.IncreaseEMPDifficulty();
+                }
                 break;
             case 3: 
                 riftActive = true;
@@ -309,6 +313,6 @@ public class PlayerController : MonoBehaviour
         string item1 = (selectedActionIndex == 1) ? "<color=#FF5555>[>] 2. CYBER LINE DASH</color>\n" : "    2. CYBER LINE DASH\n";
         string item2 = (selectedActionIndex == 2) ? "<color=#55FF55>[>] 3. EMP PULSE</color>\n" : "    3. EMP PULSE\n";
         string item3 = (selectedActionIndex == 3) ? "<color=#FFFF55>[>] 4. TIME RIFT</color>\n" : "    4. TIME RIFT\n";
-        actionWheelUiText.text = "<b>EQUIPPED MATRIX ACTION:</b>\n" + item0 + item1 + item2 + item3 + "\n<size=24>[SPACE] - Cycle Action  |  [SHIFT] - Fire Selection</size>";
+        actionWheelUiText.text = "<b>EQUIPPED MATRIX ACTION:</b>\n" + item0 + item1 + item2 + item3 + "\n<size=24>[CTRL] - Cycle Action  |  [SHIFT] - Fire Selection</size>";
     }
 }

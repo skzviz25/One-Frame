@@ -10,7 +10,7 @@ public class WaveSpawner : MonoBehaviour
     
     [Header("Collectibles & Limits")]
     public GameObject starPrefab;
-    public int maxEnemies = 12; 
+    public int maxEnemies = 20; 
     [Header("UI")]
     public TextMeshProUGUI waveText;
 

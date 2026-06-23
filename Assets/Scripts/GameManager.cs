@@ -28,6 +28,11 @@ public class GameManager : MonoBehaviour
     [Header("Juice & Effects")]
     public GameObject explosionParticlePrefab;
 
+    [Header("Trade-off System")]
+
+    public int turnsBetweenSpawns = 10; 
+    public int minimumSpawnLimit = 2;   
+
 
     private bool isGameOver = false;
 
@@ -154,5 +159,16 @@ public class GameManager : MonoBehaviour
 
 
         SoundManager.Instance.PlayExplosionSound();
+    }
+
+    public void IncreaseEMPDifficulty()
+    {
+        
+        turnsBetweenSpawns--;
+        
+        if (turnsBetweenSpawns < minimumSpawnLimit) 
+        {
+            turnsBetweenSpawns = minimumSpawnLimit;
+        }
     }
 }
